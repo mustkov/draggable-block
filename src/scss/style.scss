@@ -1,0 +1,62 @@
+// Global SCSS-files imports
+@import "./vars";
+@import "./reset";
+@import "./global";
+
+body {
+  background-color: lighten(rgb(255, 255, 255), 20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.no-pad {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto 20px auto;
+  width: 80vw;
+  height: 80vh;
+  position: relative;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: lighten(rgb(115, 160, 249), 5%);
+  border: 10px solid darken(rgb(35, 108, 255), 5%);
+}
+
+.square {
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: darken(rgb(35, 108, 255), 5%);
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(rgb(35, 108, 255), 2%);
+  }
+
+  &:active,
+  &:focus {
+    background-color: darken(rgb(35, 108, 255), 10%);
+    cursor: move;
+    cursor: grab;
+  }
+
+  &::after {
+    height: 100%;
+    content: "Drag me!";
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: white;
+  }
+}
